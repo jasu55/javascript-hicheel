@@ -5,20 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+
   <body>
     <script>
       //loop
 
       // n!
-      let n = 5;
+      let n = 3;
       let index = 1;
-      let sum = 1;
+      let multi = 1;
 
       while (index < n) {
         index = index + 1;
-        sum = sum * index;
+        multi = multi * index;
       }
-      console.log(sum);
+      console.log(multi);
 
       // avg
 
@@ -34,14 +35,14 @@
 
       // sum of even numbers
 
-      let n2 = 6;
+      let n2 = 4;
       let index2 = 0;
       let sum2 = 0;
       while (index2 + 1 < n2) {
         index2 = index2 + 2;
         sum2 = sum2 + index2;
+        console.log(sum2);
       }
-      console.log(sum2);
 
       // sum of odd numbers
 
@@ -56,14 +57,25 @@
 
       //*n
 
-      let n4 = 2;
-      let index4 = 0;
-      let sum4 = 0;
-      while (index4 < n4) {
-        index4 = index4 + 1;
-        sum4 = sum4 + index4;
+      let n4 = 5;
+      let a = 0;
+      let b = 1;
+      let index4 = 2;
+
+      if (n4 == 1) {
+        console.log(a);
+      } else if (n4 == 2) {
+        console.log(b);
+      } else {
+        while (index4 < n4) {
+          index4 = index4 + 1;
+          sum4 = a + b;
+          a = b;
+          b = sum4;
+          console.log(sum4);
+        }
       }
     </script>
   </body>
 </html>
-// shine mornoos /n
+<!-- shine mornoos /n -->
