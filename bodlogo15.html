@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bodlogo15</title>
+  </head>
+  <body>
+    <script>
+      let n = 11;
+      let k = 0;
+      let result = "";
+      while (k < 2 * n - 1) {
+        let i = 0;
+        if (k < n) {
+          while (i < 2 * n - 1) {
+            if (i > n - k - 2 && i < n + k) {
+              result = result + "* ";
+            } else {
+              result = result + "  ";
+            }
+            i = i + 1;
+          }
+        } else {
+          while (i < 2 * n - 1) {
+            if (i > k - n && i < 3 * n - 2 - k) {
+              result = result + "* ";
+            } else {
+              result = result + "  ";
+            }
+            i = i + 1;
+          }
+        }
+        k = k + 1;
+        result = result + "\n";
+      }
+      console.log(result);
+    </script>
+  </body>
+</html>

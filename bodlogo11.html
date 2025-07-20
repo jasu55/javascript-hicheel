@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bodlogo11</title>
+  </head>
+  <body>
+    <script>
+      let n = 5;
+      let result = "";
+      let k = 0;
+      while (k < n) {
+        let i = 0;
+        while (i < n) {
+          if (i < n - k) {
+            result = result + "* ";
+          } else {
+            result = result + "  ";
+          }
+          i = i + 1;
+        }
+        k = k + 1;
+        result = result + "\n";
+      }
+      console.log(result);
+    </script>
+  </body>
+</html>
