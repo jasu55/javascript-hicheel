@@ -7,20 +7,18 @@
   </head>
   <body>
     <script>
-      let n = 5;
-      let result = "";
-      let k = 0;
-      while (k < n) {
-        let i = 0;
-        while (i < n) {
-          result = result + "* ";
-          0;
-          i = i + 1;
+      let row = 1;
+      let size = 5;
+      while (row <= size) {
+        let column = 1;
+        let result = "";
+        while (column <= size) {
+          result = result + "*";
+          column = column + 1;
         }
-        result = result + "\n";
-        k = k + 1;
+        console.log(result);
+        row = row + 1;
       }
-      console.log(result);
     </script>
   </body>
 </html>
