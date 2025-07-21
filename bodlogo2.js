@@ -1,9 +1,9 @@
 let size = 5;
 let row = size;
-let result = "";
+
 while (row > 0) {
   let column = size;
-
+  let result = "";
   while (column > 0) {
     if (
       row == 1 ||
