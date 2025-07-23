@@ -87,11 +87,10 @@ printMultiplicationTable(6);
 
 //bodlogo6
 function findCountDigits(n) {
-  let a = 0;
-  for (i = n; i > 1; i /= 10) {
-    a++;
+  for (i = 0; n > 1; i++) {
+    n /= 10;
   }
-  console.log(a);
+  console.log(i);
 }
 findCountDigits(1234);
 
@@ -104,6 +103,7 @@ function findFirstAndLastDigit(n) {
   console.log(n % 10);
 }
 findFirstAndLastDigit(4332);
+console.log();
 
 //bodlogo8 ehnii ba svvliin orongiin niilberiig ol
 function findSumOfFirstAndLastDigits(n) {
@@ -155,3 +155,15 @@ function reverseDigitsDigits(n) {
   console.log(n);
 }
 reverseDigitsDigits(1234567);
+
+// bodlogo12 too bvriin dawtamjiig tootsoh program bich
+
+function printFrequencyOfDigit(n) {
+  let b = 0;
+  for (i = n; i > 1; i /= 10) {
+    let a = parseInt((n / 10 ** b) % 10);
+    console.log(a);
+    b++;
+  }
+}
+printFrequencyOfDigit(12345);
