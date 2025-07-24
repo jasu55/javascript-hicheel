@@ -159,20 +159,17 @@ reverseDigitsDigits(1234567);
 // bodlogo12 too bvriin dawtamjiig tootsoh program bich
 
 function printFrequencyOfDigit(n) {
-  let b = 0;
-
-  for (i = n; i > 1; i /= 10) {
+  for (j = 0; j < 10; j++) {
     let c = 0;
-
-    b++;
-    for (j = 0; j < 10; j++) {
+    let b = 0;
+    for (i = n; i > 1; i /= 10) {
       let a = parseInt((n / 10 ** b) % 10);
+      b++;
       if (a == j) {
         c++;
       }
     }
-    console.log(a, c);
+    console.log(j, ":", c);
   }
 }
-
-printFrequencyOfDigit(123454455);
+printFrequencyOfDigit(12345445567788009);
