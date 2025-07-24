@@ -173,3 +173,19 @@ function printFrequencyOfDigit(n) {
   }
 }
 printFrequencyOfDigit(12345445567788009);
+
+//bodlogo13 toonii zergiig oloh programm bich
+
+function findExponent(a, b) {
+  let j = 1;
+  for (i = 0; i < b; i++) {
+    j *= a;
+  }
+  return j;
+}
+let exponent = findExponent(3, 3);
+console.log(exponent);
+
+//bodlogo 14 factorial oloh program bich
+
+function findFactorial(n) {}
