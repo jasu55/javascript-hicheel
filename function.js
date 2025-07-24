@@ -160,10 +160,19 @@ reverseDigitsDigits(1234567);
 
 function printFrequencyOfDigit(n) {
   let b = 0;
+
   for (i = n; i > 1; i /= 10) {
-    let a = parseInt((n / 10 ** b) % 10);
-    console.log(a);
+    let c = 0;
+
     b++;
+    for (j = 0; j < 10; j++) {
+      let a = parseInt((n / 10 ** b) % 10);
+      if (a == j) {
+        c++;
+      }
+    }
+    console.log(a, c);
   }
 }
-printFrequencyOfDigit(12345);
+
+printFrequencyOfDigit(123454455);
