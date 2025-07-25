@@ -188,4 +188,27 @@ console.log(exponent);
 
 //bodlogo 14 factorial oloh program bich
 
-function findFactorial(n) {}
+function findFactorial(n) {
+  let exponent = 1;
+  for (i = 1; i <= n; i++) {
+    exponent *= i;
+  }
+  return exponent;
+}
+const exponent6 = findFactorial(6);
+console.log(exponent6);
+
+//bodlogo15 hamgiin ih eronhii huwaagch oloh program bich HCF
+
+findHCF = (a, b) => {
+  let hcf = 0;
+  for (i = 0; i <= a; i++) {
+    if (a % i == 0 && b % i == 0) {
+      hcf = i;
+    }
+  }
+  return hcf;
+};
+console.log(findHCF(6, 12));
+
+//bodlogo16 hamgiin baga eronhii huwaagch oloh program bich LCM
