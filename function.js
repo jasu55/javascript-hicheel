@@ -211,4 +211,14 @@ findHCF = (a, b) => {
 };
 console.log(findHCF(6, 12));
 
-//bodlogo16 hamgiin baga eronhii huwaagch oloh program bich LCM
+//bodlogo16 hamgiin baga eronhii huwaagdagch oloh program bich LCM
+
+findLCM = (a, b) => {
+  for (i = 1; i <= a * b; i++) {
+    if (i % a == 0 && i % b == 0) {
+      return i;
+    }
+  }
+};
+resultLCM = findLCM(4, 6);
+console.log(resultLCM);
