@@ -1,0 +1,284 @@
+// 1
+let data = [
+  {
+    name: "iPhone 13",
+    category: "electronics",
+    price: 1200000,
+    stock: 10,
+    brand: "Apple",
+    rating: 4.8,
+    isDiscounted: true,
+    discountPercent: 10,
+    supplier: "mobicom",
+    weight: 0.3,
+  },
+  {
+    name: "Samsung galaxy",
+    category: "electronics",
+    price: 950000,
+    stock: 5,
+    brand: "Samsung",
+    rating: 4.5,
+    isDiscounted: false,
+    discountPercent: 0,
+    supplier: "unitel",
+    weight: 0.28,
+  },
+  {
+    name: "dell xps 13",
+    category: "computers",
+    price: 2800000,
+    stock: 3,
+    brand: "dell",
+    rating: 4.7,
+    isDiscounted: true,
+    discountPercent: 15,
+    supplier: "pcmall",
+    weight: 1.2,
+  },
+  {
+    name: "mouse logitech m590",
+    category: "accessories",
+    price: 85000,
+    stock: 20,
+    brand: "logitech",
+    rating: 4.3,
+    isDiscounted: true,
+    discountPercent: 5,
+    supplier: "pcmall",
+    weight: 0.1,
+  },
+  {
+    name: "macbook air m2",
+    category: "computers",
+    price: 3200000,
+    stock: 0,
+    brand: "Apple",
+    rating: 4.9,
+    isDiscounted: false,
+    discountPercent: 0,
+    supplier: "mobicom",
+    weight: 1.1,
+  },
+];
+function getDiscountedProducts(products) {
+  return products.filter(function (product) {
+    if (product.isDiscounted === true) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+}
+
+// 2
+function getOutOfStockProducts(products) {
+  return products.filter(function (product) {
+    if (product.stock === 0) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+}
+
+// 3
+function getExpensiveProducts(products) {
+  return products.filter(function (product) {
+    if (product.price > 1000000) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+}
+
+// 4
+function getComputers(products) {
+  return products.filter(function (product) {
+    if (product.category === "Computers") {
+      return true;
+    } else {
+      return false;
+    }
+  });
+}
+
+// 5
+function filterByBrand(products, brandName) {
+  return products.filter(function (product) {
+    if (product.brand === brandName) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+}
+
+// 6
+function addIsHeavyFlag(products) {
+  return products.map(function (product) {
+    const updated = { ...product };
+    if (product.weight > 1) {
+      updated.isHeavy = true;
+    } else {
+      updated.isHeavy = false;
+    }
+    return updated;
+  });
+}
+
+// 7
+function increasePriceByTenPercent(products) {
+  return products.map(function (product) {
+    const updated = { ...product };
+    updated.price = product.price * 1.1;
+    return updated;
+  });
+}
+
+// 8
+function addFinalPrice(products) {
+  return products.map(function (product) {
+    const updated = { ...product };
+    if (product.isDiscounted === true) {
+      updated.finalPrice = product.price * (1 - product.discountPercent / 100);
+    } else {
+      updated.finalPrice = product.price;
+    }
+    return updated;
+  });
+}
+
+// 9
+function getTopRatedProduct(products) {
+  let top = null;
+  products.forEach(function (product) {
+    if (top === null || product.rating > top.rating) {
+      top = product;
+    }
+  });
+  return top;
+}
+console.log(getTopRatedProduct(data));
+
+// 10
+function getCheapestProduct(products) {
+  let cheapest = null;
+  products.forEach(function (product) {
+    if (cheapest === null || product.price < cheapest.price) {
+      cheapest = product;
+    }
+  });
+  return cheapest;
+}
+
+// 11
+function getTotalStock(products) {
+  let total = 0;
+  products.forEach(function (product) {
+    total = total + product.stock;
+  });
+  return total;
+}
+
+// 12
+function getTotalPrice(products) {
+  let total = 0;
+  products.forEach(function (product) {
+    total = total + product.price;
+  });
+  return total;
+}
+
+// 13
+function filterBySupplier(products, supplierName) {
+  return products.filter(function (product) {
+    if (product.supplier === supplierName) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+}
+
+// 14
+function getProductNames(products) {
+  return products.map(function (product) {
+    return product.name;
+  });
+}
+
+// 15
+function sortByPriceAscending(products) {
+  const copy = [...products];
+  return copy.sort(function (a, b) {
+    if (a.price < b.price) {
+      return -1;
+    } else if (a.price > b.price) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+}
+
+// 16
+function getLowStockProducts(products) {
+  return products.filter(function (product) {
+    if (product.stock <= 5) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+}
+
+// 17
+function getUniqueSuppliers(products) {
+  const names = [];
+  products.forEach(function (product) {
+    let found = false;
+    names.forEach(function (name) {
+      if (name === product.supplier) {
+        found = true;
+      }
+    });
+    if (!found) {
+      names.push(product.supplier);
+    }
+  });
+  return names;
+}
+
+// 18
+function getNameAndPriceList(products) {
+  return products.map(function (product) {
+    return {
+      name: product.name,
+      price: product.price,
+    };
+  });
+}
+
+// 19
+function getHighlyRatedProducts(products) {
+  return products.filter(function (product) {
+    if (product.rating > 4.5) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+}
+
+// 20
+function addIdToProducts(products) {
+  let id = 1;
+  return products.map(function (product) {
+    const updated = { ...product };
+    updated.id = id;
+    id = id + 1;
+    return updated;
+  });
+}
